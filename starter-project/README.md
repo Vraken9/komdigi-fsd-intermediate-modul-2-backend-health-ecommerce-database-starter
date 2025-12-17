@@ -71,18 +71,30 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/health-products
 
 ### Pastikan MongoDB Running
 
+**CATATAN PENTING:** Tidak perlu menjalankan `mongod` atau command start MongoDB jika tidak jalan di localmu. Pastikan saja MongoDB jalan dengan caramu, misalnya:
+
+- **Membuka MongoDB Compass** dan akses database yang kamu tuju (misalnya local db mu)
+- Jika MongoDB Compass sudah bisa connect ke `mongodb://localhost:27017`, berarti MongoDB sudah jalan
+- Atau jika pakai MongoDB Atlas, pastikan cluster sudah active
+- Intinya: **Pastikan MongoDB bisa diakses sesuai MONGODB_URI yang kamu set di .env**
+
+**Cara cek MongoDB sudah jalan:**
+
 **Lokal:**
-
-```bash
-# Windows
-net start MongoDB
-
-# Mac
-brew services start mongodb-community
-
-# Linux
-sudo systemctl start mongod
-```
+- Buka MongoDB Compass → Connect ke `mongodb://localhost:27017`
+- Jika berhasil connect = MongoDB sudah running
+- Jika belum jalan dan kamu mau start, bisa pakai:
+  ```bash
+  # Windows
+  net start MongoDB
+  
+  # Mac
+  brew services start mongodb-community
+  
+  # Linux
+  sudo systemctl start mongod
+  ```
+  **TAPI ingat:** Tidak wajib! Yang penting MongoDB bisa diakses dengan caramu sendiri.
 
 **Atlas:**
 
@@ -200,7 +212,7 @@ Buat seeding script:
 - [ ] MongoDB installed (lokal atau Atlas)
 - [ ] Dependencies installed
 - [ ] `.env` file configured
-- [ ] MongoDB service running
+- [ ] MongoDB bisa diakses (tidak perlu start service jika tidak jalan, cukup pastikan bisa connect via Compass atau cara lain)
 - [ ] Test connection berhasil
 
 ### Models
@@ -283,7 +295,7 @@ db.products.find({ category: "Vitamin" })
 **Error:** `MongooseServerSelectionError`  
 **Solusi:**
 
-- Check MongoDB service running
+- Pastikan MongoDB bisa diakses (tidak perlu start service jika tidak jalan, cukup pastikan bisa connect via Compass atau cara lain)
 - Verify MONGODB_URI di .env
 - Test dengan `mongosh`
 

@@ -57,13 +57,27 @@ Copy-Item .env.example .env
 # Edit .env dengan connection string kamu
 ```
 
-### Start MongoDB
+### Pastikan MongoDB Running
+
+**CATATAN PENTING:** Tidak perlu menjalankan `mongod` jika tidak jalan di localmu. Pastikan saja MongoDB jalan dengan caramu, misalnya:
+
+- **Membuka MongoDB Compass** dan akses database yang kamu tuju (misalnya local db mu)
+- Jika MongoDB Compass sudah bisa connect ke `mongodb://localhost:27017`, berarti MongoDB sudah jalan
+- Atau jika pakai MongoDB Atlas, pastikan cluster sudah active
+- Intinya: **Pastikan MongoDB bisa diakses sesuai MONGODB_URI yang kamu set di .env**
+
+**Cara cek MongoDB sudah jalan:**
 
 **Lokal:**
-
-```bash
-mongod
-```
+- Buka MongoDB Compass → Connect ke `mongodb://localhost:27017`
+- Jika berhasil connect = MongoDB sudah running
+- Jika belum jalan dan kamu mau start, bisa pakai `mongod` atau:
+  ```bash
+  # Windows: Services → Start "MongoDB Server"
+  # Mac: brew services start mongodb-community
+  # Linux: sudo systemctl start mongod
+  ```
+  **TAPI ingat:** Tidak wajib! Yang penting MongoDB bisa diakses dengan caramu sendiri.
 
 **Atlas:**
 

@@ -67,8 +67,13 @@ cp .env.example .env
 # atau
 # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/health-ecommerce
 
-# 7. Start MongoDB (jika pakai local)
-mongod
+# 7. Pastikan MongoDB Running
+# CATATAN PENTING: Tidak perlu menjalankan `mongod` jika tidak jalan di localmu.
+# Pastikan saja MongoDB jalan dengan caramu, misalnya:
+# - Membuka MongoDB Compass dan akses database yang kamu tuju (misalnya local db mu)
+# - Atau jika MongoDB Compass sudah bisa connect ke mongodb://localhost:27017, berarti MongoDB sudah jalan
+# - Atau jika pakai MongoDB Atlas, pastikan cluster sudah active
+# Intinya: Pastikan MongoDB bisa diakses sesuai MONGODB_URI yang kamu set di .env
 
 # 8. Test connection
 node test-connection.js
@@ -98,8 +103,13 @@ npm install
 cp .env.example .env
 # Edit dengan MongoDB URI kamu
 
-# 6. Start MongoDB (jika local)
-mongod
+# 6. Pastikan MongoDB Running
+# CATATAN PENTING: Tidak perlu menjalankan `mongod` jika tidak jalan di localmu.
+# Pastikan saja MongoDB jalan dengan caramu, misalnya:
+# - Membuka MongoDB Compass dan akses database yang kamu tuju (misalnya local db mu)
+# - Atau jika MongoDB Compass sudah bisa connect ke mongodb://localhost:27017, berarti MongoDB sudah jalan
+# - Atau jika pakai MongoDB Atlas, pastikan cluster sudah active
+# Intinya: Pastikan MongoDB bisa diakses sesuai MONGODB_URI yang kamu set di .env
 
 # 7. Seed database
 npm run seed
@@ -271,14 +281,28 @@ npm run seed
 
 **Solusi:**
 
+**CATATAN PENTING:** Tidak perlu menjalankan `mongod` jika tidak jalan di localmu. Pastikan saja MongoDB jalan dengan caramu, misalnya:
+
+- **Membuka MongoDB Compass** dan akses database yang kamu tuju (misalnya local db mu)
+- Jika MongoDB Compass sudah bisa connect ke `mongodb://localhost:27017`, berarti MongoDB sudah jalan
+- Atau jika pakai MongoDB Atlas, pastikan cluster sudah active
+- Intinya: **Pastikan MongoDB bisa diakses sesuai MONGODB_URI yang kamu set di .env**
+
+**Cara cek MongoDB sudah jalan:**
+
 ```bash
-# Check MongoDB running
+# Option 1: Test dengan MongoDB Compass
+# Buka MongoDB Compass → Connect ke mongodb://localhost:27017
+# Jika berhasil connect = MongoDB sudah running
+
+# Option 2: Test dengan mongosh
 mongosh
 
-# If not running, start it:
-# Windows: Services → Start "MongoDB Server"
+# Option 3: Jika belum jalan, kamu bisa start dengan cara:
+# Windows: Services → Start "MongoDB Server" (atau MongoDB Compass bisa auto-start)
 # Mac: brew services start mongodb-community
 # Linux: sudo systemctl start mongod
+# TAPI ingat: Tidak wajib! Yang penting MongoDB bisa diakses dengan caramu sendiri.
 ```
 
 ### "ValidationError: Path `name` is required"
