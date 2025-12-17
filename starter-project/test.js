@@ -50,7 +50,7 @@ async function runTests() {
       category: "Vitamin",
       price: 75000,
       stock: 30,
-      manufacturer: "Test Manufacturer"
+      manufacturer: "PT Aiman"
     });
     printResult("TEST 2: Create Product", newProduct);
     

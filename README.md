@@ -1,10 +1,10 @@
-# health-ecommerce-database
+# Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database
 
 > **MongoDB & Mongoose ODM untuk Health E-Commerce**
 
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-7.0+-brightgreen)](https://www.mongodb.com/)
-[![Mongoose](https://img.shields.io/badge/Mongoose-7.5-red)](https://mongoosejs.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-8.0+-brightgreen)](https://www.mongodb.com/)
+[![Mongoose](https://img.shields.io/badge/Mongoose-8.0+-red)](https://mongoosejs.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
 Complete database layer untuk Health E-Commerce dengan MongoDB Atlas, Mongoose ODM, schemas, relationships, dan aggregations.
@@ -16,7 +16,7 @@ Complete database layer untuk Health E-Commerce dengan MongoDB Atlas, Mongoose O
 Repository ini berisi **2 versi project**:
 
 ```
-health-ecommerce-database/
+Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database/
 ├── README.md (Ini file yang kamu baca)
 ├── starter-project/     #  Untuk practice (dengan TODO)
 │   ├── README.md
@@ -47,10 +47,10 @@ health-ecommerce-database/
 
 ```bash
 # 1. Clone repository ini
-git clone https://github.com/your-username/health-ecommerce-database.git
+git clone https://github.com/your-username/Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database.git
 
 # 2. Masuk ke folder repository
-cd health-ecommerce-database
+cd Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database
 
 # 3. Masuk ke starter-project
 cd starter-project
@@ -83,10 +83,10 @@ npm run seed
 
 ```bash
 # 1. Clone repository (jika belum)
-git clone https://github.com/your-username/health-ecommerce-database.git
+git clone https://github.com/your-username/Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database.git
 
 # 2. Masuk ke folder repository
-cd health-ecommerce-database
+cd Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database
 
 # 3. Masuk ke finished-project
 cd finished-project
@@ -243,10 +243,10 @@ npm run seed
 
 **Modul 2 (This!)** → Builds Database Layer
 
--  MongoDB setup (local + cloud)
--  Mongoose schemas & models
--  CRUD operations
--  Relationships & aggregations
+- MongoDB setup (local + cloud)
+- Mongoose schemas & models
+- CRUD operations
+- Relationships & aggregations
 
 **Ke Modul 3 (Express):**
 
@@ -332,9 +332,9 @@ After completing this module:
 
 1.  **Verify 4 models** working with Compass
 2.  **Test CRUD operations** in isolation
-3.   **Modul 3** - Build Express API using these models
-4.   **Modul 4** - Add authentication with User model
-5.   **Modul 5** - External integrations
+3.  **Modul 3** - Build Express API using these models
+4.  **Modul 4** - Add authentication with User model
+5.  **Modul 5** - External integrations
 
 ---
 
@@ -347,6 +347,6 @@ _Part of Health E-Commerce Backend Series_
 
 ** Repository Info:**
 
-- **Name:** `health-ecommerce-database`
+- **Name:** `Komdigi-FSD-Intermediate-Modul-2-Backend-health-ecommerce-database`
 - **Type:** Database Layer (Models & Schemas)
 - **Structure:** 1 Repo, 2 Folders (starter + finished)

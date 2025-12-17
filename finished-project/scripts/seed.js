@@ -128,23 +128,23 @@ const users = [
     role: "user",
   },
   {
-    firstName: "Budi",
+    firstName: "Aiman",
     lastName: "Santoso",
-    email: "budi@example.com",
+    email: "aiman2@example.com",
     password: "password123",
     role: "user",
   },
   {
-    firstName: "Citra",
+    firstName: "Aila",
     lastName: "Dewi",
-    email: "citra@example.com",
+    email: "aila2@example.com",
     password: "password123",
     role: "user",
   },
   {
-    firstName: "Dani",
+    firstName: "Aiman",
     lastName: "Wijaya",
-    email: "dani@example.com",
+    email: "aiman3@example.com",
     password: "password123",
     role: "user",
   },
@@ -200,14 +200,14 @@ async function seedDatabase() {
       },
       {
         productId: createdProducts[4]._id, // Omega-3
-        userId: createdUsers[2]._id, // Budi
+        userId: createdUsers[2]._id, // Aiman
         rating: 5,
         comment: "Omega-3 terbaik! Nggak ada after taste amis.",
         isVerified: true,
       },
       {
         productId: createdProducts[4]._id, // Omega-3
-        userId: createdUsers[3]._id, // Citra
+        userId: createdUsers[3]._id, // Aila
         rating: 4,
         comment: "Bagus untuk jantung, rutin konsumsi.",
         isVerified: false,
@@ -221,21 +221,21 @@ async function seedDatabase() {
       },
       {
         productId: createdProducts[2]._id, // Multivitamin
-        userId: createdUsers[4]._id, // Dani
+        userId: createdUsers[4]._id, // Aiman
         rating: 4,
         comment: "Lengkap kandungannya, harga worth it.",
         isVerified: true,
       },
       {
         productId: createdProducts[5]._id, // Glucosamine
-        userId: createdUsers[2]._id, // Budi
+        userId: createdUsers[2]._id, // Aiman
         rating: 5,
         comment: "Lutut udah nggak sakit lagi setelah rutin minum ini!",
         isVerified: true,
       },
       {
         productId: createdProducts[6]._id, // Probiotics
-        userId: createdUsers[3]._id, // Citra
+        userId: createdUsers[3]._id, // Aila
         rating: 4,
         comment: "Pencernaan jadi lebih lancar.",
         isVerified: false,
