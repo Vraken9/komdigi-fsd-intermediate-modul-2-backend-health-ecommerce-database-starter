@@ -15,10 +15,10 @@
  */
 
 // TODO: Import dependencies
-// require('dotenv').config();
-// const mongoose = require('mongoose');
-// const Product = require('../models/Product');
-// const connectDB = require('../config/database');
+require('dotenv').config();
+const mongoose = require('mongoose');
+const Product = require('../models/Product');
+const connectDB = require('../config/database');
 
 // TODO: Buat array sample products
 const products = [
@@ -32,18 +32,109 @@ const products = [
   //   stock: 50,
   //   manufacturer: "PT Sehat Sejahtera"
   // },
+  {
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+{
+  name: "Vitamin C 1000mg",
+  description: "Suplemen vitamin C untuk daya tahan tubuh",
+  category: "Vitamin",
+  price: 85000,
+  stock: 50,
+  manufacturer: "PT Sehat Sejahtera"
+},
+
+
 ];
 
 // TODO: Fungsi seeding
 async function seedDatabase() {
   try {
     // TODO: Connect to database
+    await connectDB();
     // TODO: Delete existing products
-    // await Product.deleteMany();
-    // console.log('Existing products deleted');
+    await Product.deleteMany();
+    console.log('Existing products deleted');
     // TODO: Insert new products
-    // const created = await Product.insertMany(products);
-    // console.log(`${created.length} products inserted`);
+    const created = await Product.insertMany(products);
+    console.log(`${created.length} products inserted`);
     // TODO: Log sample product IDs
     // TODO: Exit
     // process.exit(0);
@@ -54,3 +145,6 @@ async function seedDatabase() {
 }
 
 // TODO: Call seedDatabase();
+seedDatabase();   
+ 
+

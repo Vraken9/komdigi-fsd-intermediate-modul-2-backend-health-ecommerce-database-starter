@@ -10,9 +10,35 @@
  * 3. Tambahkan timestamps
  */
 
+const mongoose = require('mongoose');
 // TODO: Import mongoose
 
 // TODO: Define reviewSchema
+const reviewSchema = new mongoose.Schema({
+  productId:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Product',
+    required:true
+  },
+  userId:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'User',
+    required:true
+  },
+  rating:{
+    type:Number,
+    required:true,
+    min:1,
+    max:5
+  },
+  comment:{
+    type:String
+  },
+  isVerified:{
+    type:Boolean,
+    default:false
+  }
+},{timestamps:true});
 /*
 Fields:
 - productId: ObjectId, ref 'Product', required
@@ -23,3 +49,4 @@ Fields:
 */
 
 // TODO: Export model
+module.exports = mongoose.model('Review', reviewSchema);

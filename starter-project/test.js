@@ -10,7 +10,7 @@ const connectDB = require("./config/database");
 
 // TODO: Uncomment ketika sudah implement productService
 // const productService = require('./services/productService');
-
+const productService = require('./services/productService');
 // Helper function untuk print results
 function printResult(title, result) {
   console.log("\n" + "=".repeat(60));
@@ -43,7 +43,7 @@ async function runTests() {
 
     // ========== TEST 2: Create Product ==========
     printWarning("TEST 2: Create Product - UNCOMMENT SETELAH IMPLEMENT");
-    /*
+    
     const newProduct = await productService.createProduct({
       name: "Test Vitamin C",
       description: "Produk test untuk vitamin C",
@@ -56,42 +56,42 @@ async function runTests() {
     
     // Simpan ID untuk test selanjutnya
     const testProductId = newProduct.data?._id;
-    */
+      
 
     // ========== TEST 3: Get All Products ==========
     printWarning("TEST 3: Get All Products - UNCOMMENT SETELAH IMPLEMENT");
-    /*
+    
     const allProducts = await productService.getAllProducts();
     printResult("TEST 3: Get All Products", {
       success: allProducts.success,
       count: allProducts.count,
       sampleProduct: allProducts.data?.[0]
     });
-    */
+    
 
     // ========== TEST 4: Get Product by ID ==========
     printWarning("TEST 4: Get Product by ID - UNCOMMENT SETELAH IMPLEMENT");
-    /*
+    
     if (testProductId) {
       const product = await productService.getProductById(testProductId);
       printResult("TEST 4: Get Product by ID", product);
     }
-    */
+    
 
     // ========== TEST 5: Filter Products by Category ==========
     printWarning("TEST 5: Filter by Category - UNCOMMENT SETELAH IMPLEMENT");
-    /*
+    
     const vitamins = await productService.getAllProducts({ category: 'Vitamin' });
     printResult("TEST 5: Filter Products (Category: Vitamin)", {
       success: vitamins.success,
       count: vitamins.count,
       products: vitamins.data?.map(p => ({ name: p.name, price: p.price }))
     });
-    */
+    
 
     // ========== TEST 6: Update Product ==========
     printWarning("TEST 6: Update Product - UNCOMMENT SETELAH IMPLEMENT");
-    /*
+    
     if (testProductId) {
       const updated = await productService.updateProduct(testProductId, {
         price: 80000,
@@ -104,11 +104,11 @@ async function runTests() {
         newStock: updated.data?.stock
       });
     }
-    */
+
 
     // ========== TEST 7: Soft Delete Product ==========
     printWarning("TEST 7: Soft Delete - UNCOMMENT SETELAH IMPLEMENT");
-    /*
+    
     if (testProductId) {
       const deleted = await productService.deleteProduct(testProductId);
       printResult("TEST 7: Soft Delete Product", deleted);
@@ -120,7 +120,6 @@ async function runTests() {
         isActive: checkDeleted.data?.isActive
       });
     }
-    */
 
     // Success summary
     console.log("\n" + "=".repeat(60));

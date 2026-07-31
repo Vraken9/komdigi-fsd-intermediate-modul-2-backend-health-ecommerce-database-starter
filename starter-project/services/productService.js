@@ -10,14 +10,16 @@
 
 // TODO: Import Product model
 // Hint: const Product = require('../models/Product');
-
+const Product = require('../models/Product');
 /**
  * CREATE - Buat product baru
  */
 async function createProduct(data) {
   try {
     // TODO: Create product dengan Product.create(data)
+    const product = await Product.create(data);
     // TODO: Return { success: true, data: product }
+    return {success:true,data:product};
   } catch (error) {
     return { success: false, error: error.message };
   }
@@ -32,6 +34,11 @@ async function getAllProducts(filter = {}) {
     // TODO: Sort by createdAt descending
     // TODO: Limit 50
     // TODO: Return { success: true, count, data }
+    const products = await Product
+      .find(filter)
+      .sort({createdAt: -1})
+      .limit(50);
+    return {success:true,count:products.length,data:products}
   } catch (error) {
     return { success: false, error: error.message };
   }
@@ -45,6 +52,11 @@ async function getProductById(id) {
     // TODO: Find by ID
     // TODO: Check if not found, return error
     // TODO: Return { success: true, data }
+    const product = await Product.findById(id);
+    if(!product){
+      return {success:false, error: 'Product tidak ditemukan'}
+    }
+    return {success:true,data:product}
   } catch (error) {
     return { success: false, error: error.message };
   }
@@ -58,6 +70,17 @@ async function updateProduct(id, updates) {
     // TODO: findByIdAndUpdate dengan options { new: true, runValidators: true }
     // TODO: Check if not found
     // TODO: Return { success: true, data }
+    const updatedProduct = await Product.findByIdAndUpdate(
+      id,
+      updates,
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedProduct) {
+      return { success: false, error: 'Product tidak ditemukan' };
+    }
+
+    return { success: true, data: updatedProduct };
   } catch (error) {
     return { success: false, error: error.message };
   }
@@ -71,16 +94,27 @@ async function deleteProduct(id) {
     // TODO: Soft delete - set isActive: false (jangan hard delete!)
     // TODO: Check if not found
     // TODO: Return { success: true, message }
+    const product = await Product.findByIdAndUpdate(
+      id,
+      { isActive: false },
+      { new: true }
+    );
+
+    if (!product) {
+      return { success: false, error: 'Product tidak ditemukan' };
+    }
+
+    return { success: true, message: 'Product berhasil dihapus' };
   } catch (error) {
     return { success: false, error: error.message };
   }
 }
 
 // TODO: Export semua functions
-// module.exports = {
-//   createProduct,
-//   getAllProducts,
-//   getProductById,
-//   updateProduct,
-//   deleteProduct
-// };
+module.exports = {
+  createProduct,
+  getAllProducts,
+  getProductById,
+  updateProduct,
+  deleteProduct
+};
